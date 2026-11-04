@@ -47,22 +47,14 @@ The SRS document can be found under [Main](Main.md)
 		- `grep -rLE "^related-tests:\s*\S" --include="*.md" ./uc`
 
 ### Query repository
-- Use `git log \[params\]`
+- Use `git log [params]`
 - Examples:
 	- Get me the history of a file:
 		- `git log --follow -- path/to/file.md`
-
-•Get me a diff of what has changed in the file:
-
-•git log -p -- path/to/file.md
-
-•Commits relating to a specific Jira task
-
-•git log --follow --grep="LMS-123" -- path/to/file.md
-
-•Follow the rationale of the changes:
-
-git log -p -G"rationale:" -- path/to/file.md
-
-
+	- Get me a diff of what has changed in the file:
+		- `git log -p -- path/to/file.md`
+	- Commits relating to a specific Jira task:
+		- `git log --follow --grep="LMS-123" -- path/to/file.md`
+	- Follow the rationale of the changes:
+		- `git log --grep="rationale:" --format='%h | %(trailers:key=rationale,valueonly)’ -- path/to/file.md`
 
