@@ -23,8 +23,46 @@ The SRS document can be found under [Main](Main.md)
 * Adopt the commit template that can be found in `.gitmessage`
 * Adopt as follows
 	* `git config commit.template .gitmessage.txt`
+* **First step: pull from GitHub!**
+	* `git pull`
+* Edit as appropriate
+* Add files to the index using 
+	* `git add [files]`
+* Commit by simply doing
+	* `git commit`
+	* The editor will open with the template loaded according to `.getmessage.txt`
+	* Customize the message, save and close for the commit to complete.
+* **You may need to do multiple commits in one seating if you have done many distinct changes to facilitate subsequent tracing.**
 
+## Query your repo
+### Query (whatever is in) Working Directory
 
+- Use grep. In MS Windows, it is accessible through opening Git Bash.
+- Examples:
+	- Which requirements are in progress?
+		- `grep -rli "^status:.*in progress" --include="*.md" .`
+	- Requirements for which john must be informed:
+		- `grep -rlPzi '(?s)author:(?:(?!\n\w).)*\bjohn\b' --include="*.md" .`
+	- Use cases that yet don’t have tests:
+		- `grep -rLE "^related-tests:\s*\S" --include="*.md" ./uc`
+
+### Query repository
+- Use `git log \[params\]`
+- Examples:
+	- Get me the history of a file:
+		- `git log --follow -- path/to/file.md`
+
+•Get me a diff of what has changed in the file:
+
+•git log -p -- path/to/file.md
+
+•Commits relating to a specific Jira task
+
+•git log --follow --grep="LMS-123" -- path/to/file.md
+
+•Follow the rationale of the changes:
+
+git log -p -G"rationale:" -- path/to/file.md
 
 
 
