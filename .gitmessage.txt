@@ -3,34 +3,27 @@ xxx(<req-id>)[-minor]: Short Description
 
 - Description in point form.
 
-% FOOTER %
+% FOOTER (KEEP LINES TOGETHER) %
 
 # Add below what you used for xxx. Repeat the line for all relevant xxx's
 type-of: xxx1
 type-of: xxx2
-
 # Rationale
 rationale: <the underlying reason for the change>
 context: [<links/references to evidence or other motivators for the change>, ...]
 related: [<links/references to other affecting or affected items>, ...]
-
 # JIRA Refs
-
 # If the commit closes one or more work items (In Progress -> Done)
 closes: "<URL of Jira work item>" | "<title of Jira work item in one line>"
 closes: ...
-
 # If the related work item(s) stay(s) In Progress
 addresses: "<URL of Jira work item>" | "<title of Jira work item in one line>"
 addresses : ...
-
 # The commit relates to a work item in an unspecified way
 relates-to: "<URL of Jira work item>" | "<title of Jira work item in one line>"
 relates-to: ...
-
 # Work item(s) that was/were just introduced as a result of working on this commit.
 introduces: ...
-
 # A related commit in a different repo to which this repo depends
 # Example: 
 # related-commit: 95f935e8344042e91711858e19fc3de09186224e@cnsim-engine
